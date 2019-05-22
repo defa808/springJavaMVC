@@ -35,9 +35,9 @@ public class HomeController {
 
         StringBuilder sum = new StringBuilder();
 
-//        for (Present present: presents) {
-//            sum.append(" here - > ").append(present.getSweets().size());
-//        }
+        for (Present present: presents) {
+            sum.append(" here - > ").append(present.getSweets().size());
+        }
         model.addAttribute("length", sum);
         model.addAttribute("presents", presents);
         model.addAttribute("sweetsController", sweets);

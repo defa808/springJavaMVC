@@ -39,21 +39,22 @@
 
     <h2 class="text-center">Presents</h2>
     <div class="card-columns">
-        {{length}}
         {{#presents}}
         <div class="card my-3">
             <div class="m-2">
                 <span><b>Name:</b> {{name}}</span>
             </div>
             <div class="m-2">
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseShowSweets" role="button" aria-expanded="false" aria-controls="collapseShowSweets">
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseShowSweets{{id}}" role="button" aria-expanded="false" aria-controls="collapseShowSweets{{id}}">
                     Show all sweets
                 </a>
             </div>
 
             <div class="m-3">
-                <div class="collapse" id="collapseShowSweets">
-
+                <div class="collapse" id="collapseShowSweets{{id}}">
+                    {{#sweets}}
+                    <h1>{{name}}</h1>
+                    {{/sweets}}
                 </div>
             </div>
             <div class="card-footer text-muted">

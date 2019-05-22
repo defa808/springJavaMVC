@@ -3,6 +3,7 @@ package com.kpi.testtask2.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -26,4 +27,18 @@ public class Present {
 
     @OneToMany(mappedBy = "present", cascade = CascadeType.ALL)
     private Set<Sweet> sweets;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Present)) return false;
+        Present present = (Present) o;
+        return Objects.equals(id, present.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name + id.toString());
+    }
+
 }
