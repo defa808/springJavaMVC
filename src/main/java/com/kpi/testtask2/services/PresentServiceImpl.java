@@ -16,4 +16,9 @@ public class PresentServiceImpl implements PresentService {
     public List<Present> getAllPresent(){
         return Lists.newArrayList(presentRepository.findAll());
     }
+
+    @Override
+    public List<Present> findByNamePresents(String name) {
+        return presentRepository.findByName(name);
+    }
 }

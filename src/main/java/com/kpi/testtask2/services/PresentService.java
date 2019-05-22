@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface PresentService {
     List<Present> getAllPresent();
+    List<Present> findByNamePresents(String name);
 }
