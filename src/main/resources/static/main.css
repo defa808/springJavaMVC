@@ -1,0 +1,9 @@
+.tools {
+    display: flex;
+    justify-content: flex-end
+
+}
+
+.tools a{
+    margin-left:15px;
+}

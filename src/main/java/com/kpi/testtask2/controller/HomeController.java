@@ -27,20 +27,12 @@ public class HomeController {
 
     @GetMapping("/")
     public String index(@RequestParam(required = false, defaultValue = "") String filter, Model model) {
-        List<Sweet> sweets = sweetPresentService.getAllSweets();
         List<Present> presents = presentService.getAllPresent();
         if(filter != null && !filter.isEmpty()){
             presents = presentService.findByNamePresents(filter);
         }
 
-        StringBuilder sum = new StringBuilder();
-
-        for (Present present: presents) {
-            sum.append(" here - > ").append(present.getSweets().size());
-        }
-        model.addAttribute("length", sum);
         model.addAttribute("presents", presents);
-        model.addAttribute("sweetsController", sweets);
         model.addAttribute("filter", filter);
         return "test";
     }

@@ -21,4 +21,9 @@ public class PresentServiceImpl implements PresentService {
     public List<Present> findByNamePresents(String name) {
         return presentRepository.findByName(name);
     }
+
+    @Override
+    public void savePresent(Present present) {
+        presentRepository.save(present);
+    }
 }

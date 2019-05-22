@@ -18,13 +18,15 @@ public class Sweet {
 
     public Sweet(){}
 
-    public Sweet(String name, String developerName) {
+    public Sweet(String name, String developerName, Date shelfLife) {
         this.name = name;
         this.developerName = developerName;
+        this.shelfLife = shelfLife;
     }
 
     private String name;
     private String developerName;
+    private Date shelfLife;
 
     @ManyToOne
     @JoinColumn

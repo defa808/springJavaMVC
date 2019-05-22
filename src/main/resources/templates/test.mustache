@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/main.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 </head>
 
 <body>
@@ -15,20 +18,22 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <form method="get" action="/" class="form-inline">
-                <input type="text" name="filter" class="form-control" value="{{filter}}" placeholder="Search present by name">
+                <input type="text" name="filter" class="form-control" value="{{filter}}"
+                       placeholder="Search present by name">
                 <button type="submit" class="btn btn-primary ml-2">Search Present</button>
             </form>
         </div>
     </div>
 
-    <a class="btn btn-primary" data-toggle="collapse" href="#collapseAddArtist" role="button" aria-expanded="false" aria-controls="collapseAddArtist">
+    <a class="btn btn-primary" data-toggle="collapse" href="#collapseAddArtist" role="button" aria-expanded="false"
+       aria-controls="collapseAddArtist">
         Add new Present
     </a>
     <div class="collapse" id="collapseAddArtist">
         <div class="form-group mt-3">
-            <form method="post" enctype="multipart/form-data">
+            <form method="post" action="/present/add" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="name" placeholder="Enter name" />
+                    <input type="text" class="form-control" name="name" placeholder="Enter name"/>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Add</button>
@@ -45,20 +50,27 @@
                 <span><b>Name:</b> {{name}}</span>
             </div>
             <div class="m-2">
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseShowSweets{{id}}" role="button" aria-expanded="false" aria-controls="collapseShowSweets{{id}}">
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseShowSweets{{id}}" role="button"
+                   aria-expanded="false" aria-controls="collapseShowSweets{{id}}">
                     Show all sweets
                 </a>
             </div>
 
             <div class="m-3">
                 <div class="collapse" id="collapseShowSweets{{id}}">
+                    <h4>Sweets:</h4>
                     {{#sweets}}
-                    <h1>{{name}}</h1>
+                    <div class="card my-3">
+                        <div class="m-2">
+                            <div><b>Name:</b> {{name}}</div>
+                            <div><b>Developer:</b> {{developerName}}</div>
+                            <div><b>Shelf Life:</b> {{shelfLife}}</div>
+                        </div>
+                    </div>
                     {{/sweets}}
                 </div>
             </div>
-            <div class="card-footer text-muted">
-                id = {{id}}
+            <div class="card-footer text-muted tools" >
                 <a class="btn btn-primary" href="/artist-edit/?id={{id}}">
                     Edit
                 </a>
@@ -71,12 +83,17 @@
     </div>
 
 
-
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
 </body>
 </html>
