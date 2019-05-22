@@ -34,15 +34,7 @@ public class HomeController {
 
         model.addAttribute("presents", presents);
         model.addAttribute("filter", filter);
-        return "test";
-    }
-
-    @GetMapping("/hop")
-    public String getSome(Model model) {
-
         return "index";
     }
-
-
 
 }
