@@ -18,12 +18,23 @@ public class PresentServiceImpl implements PresentService {
     }
 
     @Override
+    public Present findById(Long id) {
+        return presentRepository.findById(id).get();
+    }
+
+    @Override
     public List<Present> findByNamePresents(String name) {
         return presentRepository.findByName(name);
     }
 
     @Override
-    public void savePresent(Present present) {
+    public void save(Present present) {
         presentRepository.save(present);
+    }
+
+    @Override
+    public void delete(Long id) {
+        Present present = this.findById(id);
+        presentRepository.delete(present);
     }
 }

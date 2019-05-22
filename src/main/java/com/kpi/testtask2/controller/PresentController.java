@@ -21,9 +21,30 @@ public class PresentController {
     }
 
     @PostMapping("/add")
-    public String editArtist(@RequestParam String name, Model model){
+    public String addPresent(@RequestParam String name, Model model){
         Present present = new Present(name);
-        presentService.savePresent(present);
+        presentService.save(present);
+        return "redirect:/";
+    }
+
+    @GetMapping("/edit")
+    public String editPresent(@RequestParam Long id, Model model){
+        Present present = presentService.findById(id);
+        model.addAttribute("present", present);
+        return "presentEdit";
+    }
+
+    @PostMapping("/edit")
+    public String editPresent(@RequestParam Long id,String name, Model model){
+        Present present = presentService.findById(id);
+        present.setName(name);
+        presentService.save(present);
+        return "redirect:/";
+    }
+
+    @GetMapping("/delete")
+    public String deletePresent(@RequestParam Long id, Model model){
+        presentService.delete(id);
         return "redirect:/";
     }
 }

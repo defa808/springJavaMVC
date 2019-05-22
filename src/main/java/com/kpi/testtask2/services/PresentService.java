@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface PresentService {
     List<Present> getAllPresent();
+    Present findById(Long id);
     List<Present> findByNamePresents(String name);
-    void savePresent(Present present);
+    void save(Present present);
+    void delete(Long id);
 }
