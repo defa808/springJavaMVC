@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class SweetServiceImpl implements SweetService {
+public class SweetServiceImpl implements SweetService, ServiceBase<Sweet> {
 
     @Autowired
     private SweetRepository sweetRepository;

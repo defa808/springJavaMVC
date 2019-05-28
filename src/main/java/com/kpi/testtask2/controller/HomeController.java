@@ -17,11 +17,9 @@ import java.util.List;
 public class HomeController {
 
     private final PresentService presentService;
-    private final SweetService sweetPresentService;
 
-    public HomeController(PresentService presentService, SweetService sweetPresentService) {
+    public HomeController(PresentService presentService) {
         this.presentService = presentService;
-        this.sweetPresentService = sweetPresentService;
 
     }
 

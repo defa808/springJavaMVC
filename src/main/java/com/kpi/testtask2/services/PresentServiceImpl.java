@@ -9,7 +9,7 @@ import org.assertj.core.util.Lists;
 import java.util.List;
 
 @Service
-public class PresentServiceImpl implements PresentService {
+public class PresentServiceImpl implements PresentService, ServiceBase<Present>{
     @Autowired
     private PresentRepository presentRepository;
 
