@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("present")
+@RequestMapping("api/present")
 public class PresentControllerApi {
 
     private final PresentService presentService;

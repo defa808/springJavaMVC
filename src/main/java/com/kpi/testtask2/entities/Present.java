@@ -1,5 +1,6 @@
 package com.kpi.testtask2.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -26,6 +27,7 @@ public class Present {
     }
 
     @OneToMany(mappedBy = "present", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Set<Sweet> sweets;
 
     @Override

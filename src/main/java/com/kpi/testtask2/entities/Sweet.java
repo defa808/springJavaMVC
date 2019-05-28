@@ -1,6 +1,7 @@
 package com.kpi.testtask2.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -30,6 +31,7 @@ public class Sweet {
 
     @ManyToOne
     @JoinColumn
+    @JsonBackReference
     private Present present;
 
     @Override
